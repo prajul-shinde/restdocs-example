@@ -25,6 +25,8 @@ import static org.mockito.BDDMockito.given;
 //import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
+import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
+import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 @ExtendWith(RestDocumentationExtension.class)
@@ -50,7 +52,17 @@ class BeerControllerTest {
                 .andDo(document("v1/beer",pathParameters(
                         parameterWithName("beerId").description("UUID of desired beer to get.")),
                         requestParameters(parameterWithName("iscold").description("is beer cold? query paramter")
-                )));
+                ),responseFields(
+                        fieldWithPath("id").description("id of beer"),
+                        fieldWithPath("version").description("version number"),
+                        fieldWithPath("createdDate").description("date created"),
+                        fieldWithPath("lastModifiedDate").description("date updated"),
+                        fieldWithPath("beerName").description("Beer name"),
+                        fieldWithPath("beerStyle").description("beer style"),
+                        fieldWithPath("upc").description("upc of beer"),
+                        fieldWithPath("price").description("price of beer"),
+                        fieldWithPath("quantityOnHand").description("quantity on hand")
+                        )));
 
     }
 
