@@ -34,6 +34,8 @@ import static org.springframework.restdocs.snippet.Attributes.key;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 @ExtendWith(RestDocumentationExtension.class)
 @AutoConfigureRestDocs
+//customize uri
+//@AutoConfigureRestDocs(uriScheme = "https",uriHost = "dev.springframework.guru",uriPort = 80);
 @WebMvcTest(BeerController.class)
 @ComponentScan(basePackages = "com.csi.sfgrestdocsexample.web.mappers")
 class BeerControllerTest {
@@ -52,7 +54,7 @@ class BeerControllerTest {
                 .param("iscold","yes")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andDo(document("v1/beer",pathParameters(
+                .andDo(document("v1/beer-get",pathParameters(
                         parameterWithName("beerId").description("UUID of desired beer to get.")),
                         requestParameters(parameterWithName("iscold").description("is beer cold? query paramter")
                 ),responseFields(
@@ -80,7 +82,7 @@ class BeerControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(beerToJson))
                 .andExpect(status().isCreated())
-        .andDo(document("v1/beer",requestFields(
+        .andDo(document("v1/beer-new",requestFields(
                 fields.withPath("id").ignored(),
                 fields.withPath("version").ignored(),
                 fields.withPath("createdDate").ignored(),

@@ -1,0 +1,13 @@
+com\csi\sfgrestdocsexample\web\mappers\BeerMapperImpl.class
+com\csi\sfgrestdocsexample\web\controller\BeerController.class
+com\csi\sfgrestdocsexample\web\model\BeerPagedList.class
+com\csi\sfgrestdocsexample\repositories\BeerRepository.class
+com\csi\sfgrestdocsexample\web\model\BeerDto$BeerDtoBuilder.class
+com\csi\sfgrestdocsexample\web\mappers\BeerMapper.class
+com\csi\sfgrestdocsexample\domain\Beer.class
+com\csi\sfgrestdocsexample\SfgRestdocsExampleApplication.class
+com\csi\sfgrestdocsexample\domain\Beer$BeerBuilder.class
+com\csi\sfgrestdocsexample\bootstrap\BeerLoader.class
+com\csi\sfgrestdocsexample\web\mappers\DateMapper.class
+com\csi\sfgrestdocsexample\web\model\BeerDto.class
+com\csi\sfgrestdocsexample\web\model\BeerStyleEnum.class

@@ -1,0 +1,7 @@
+|===
+|Parameter|Description
+
+|`+iscold+`
+|is beer cold? query paramter
+
+|===
